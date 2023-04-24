@@ -1,0 +1,24 @@
+2023-04-12 10:15:23.433 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.474 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.474 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.475 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.475 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.475 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.475 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.475 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.476 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.476 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 10:15:23.494 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 11:06:10.453 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 12:06:10.445 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 13:56:25.666 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-04-12 14:04:39.554 febs [Thread-28] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_DESKTOP-ITVOUJ51681211179964 paused.
+2023-04-12 14:04:39.585 febs [Thread-28] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2023-04-12 14:04:39.812 febs [Thread-28] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2023-04-12 14:04:39.813 febs [Thread-28] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2023-04-12 14:04:39.813 febs [Thread-28] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_DESKTOP-ITVOUJ51681211179964 shutting down.
+2023-04-12 14:04:39.814 febs [Thread-28] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_DESKTOP-ITVOUJ51681211179964 paused.
+2023-04-12 14:04:39.821 febs [Thread-28] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_DESKTOP-ITVOUJ51681211179964 shutdown complete.
+2023-04-12 14:04:39.845 febs [Thread-28] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2023-04-12 14:04:39.856 febs [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown initiated...
+2023-04-12 14:04:39.864 febs [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown completed.

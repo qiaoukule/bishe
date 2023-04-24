@@ -13,7 +13,8 @@ export default {
     theme: db.get('THEME', 'light'),
     layout: db.get('LAYOUT', 'side'),
     systemName: '物业管理系统',
-    copyright: `${new Date().getFullYear()} <a>FanK</a>`,
+    copyright: `${new Date().getFullYear()} <a>QQi</a>`,
+    /* copyright: `${new Date().getFullYear()} <a>FanK</a>`, */
     multipage: getBooleanValue(db.get('MULTIPAGE'), true),
     fixSiderbar: getBooleanValue(db.get('FIX_SIDERBAR'), true),
     fixHeader: getBooleanValue(db.get('FIX_HEADER'), true),

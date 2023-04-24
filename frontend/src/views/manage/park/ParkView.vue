@@ -13,7 +13,7 @@
         </a-col>
         <a-col :span="8"><b>所属苑区：</b>
           <a-tooltip>
-            {{ parkData.community }} ...
+            {{ parkData.community }}
           </a-tooltip>
         </a-col>
         <a-col :span="8"><b>车位面积：</b>

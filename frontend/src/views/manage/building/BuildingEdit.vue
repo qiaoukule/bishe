@@ -104,8 +104,6 @@
             ]">
               <a-select-option value="1">电梯房</a-select-option>
               <a-select-option value="2">楼梯房</a-select-option>
-      <!--         <a-select-option value="3">高层楼</a-select-option>
-              <a-select-option value="4">简易楼</a-select-option> -->
             </a-select>
           </a-form-item>
         </a-col>

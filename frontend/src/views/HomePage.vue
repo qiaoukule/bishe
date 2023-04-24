@@ -23,15 +23,15 @@
               <a-col :span="4">
                 <head-info title="房屋数量" :content="housesNum" :center="false" :bordered="false"/>
               </a-col>
-              <a-col :span="4">
-                <head-info title="用水消耗" :content="water" :center="false" :bordered="false"/>
+            <!--   <a-col :span="4">
+                 <head-info title="用水消耗" :content="water" :center="false" :bordered="false"/>
               </a-col>
-              <a-col :span="4">
+             <a-col :span="4">
                 <head-info title="用电消耗" :content="electricity" :center="false" />
               </a-col>
               <a-col :span="4">
                 <head-info title="未缴费用" :content="unpaid" :center="false" />
-              </a-col>
+              </a-col> -->
             </a-row>
             <a-row class="more-info" v-else>
               <a-col :span="4"></a-col>
@@ -42,26 +42,26 @@
               <a-col :span="4">
                 <head-info title="房屋数量" :content="housesNum" :center="false" :bordered="false"/>
               </a-col>
-              <a-col :span="4">
+             <!--  <a-col :span="4">
                 <head-info title="预收金额" :content="received" :center="false" />
               </a-col>
               <a-col :span="4">
                 <head-info title="已收金额" :content="advance" :center="false" />
-              </a-col>
+              </a-col> -->
             </a-row>
           </div>
         </a-col>
       </a-card>
     </a-row>
     <a-row :gutter="8" class="count-info">
-      <a-col :span="16" class="visit-count-wrapper">
+     <!--  <a-col :span="16" class="visit-count-wrapper">
         <a-row :gutter="8">
           <a-col :span="24">
             <a-card class="visit-count">
               <a-skeleton active v-if="loading" />
               <apexchart v-if="!loading" type="area" height="300" :options="chartOptions1" :series="series1"></apexchart>
             </a-card>
-          </a-col>
+          </a-col> -->
           <a-col :span="24" v-if="user.roleId != 75">
             <a-row :gutter="8" class="count-info" style="margin-top: 8px;margin-left: 0px;margin-right: 0px">
               <a-col :span="24" class="visit-count-wrapper">
@@ -84,7 +84,7 @@
           </a-col>
         </a-row>
       </a-col>
-      <a-col :span="8" class="project-wrapper">
+      <!-- <a-col :span="8" class="project-wrapper">
         <a-card hoverable :loading="loading" title="公告信息">
           <div>
             <a-list item-layout="vertical" :pagination="pagination" :data-source="bulletinList">
@@ -102,7 +102,7 @@
             </a-list>
           </div>
         </a-card>
-      </a-col>
+      </a-col> -->
     </a-row>
   </div>
 </template>
@@ -242,6 +242,8 @@ export default {
       propertyItemYear: [],
       housesNum: 0,
       electricity: 0,
+      buildingNum: 0,
+      buildingNum_Type2: 0,
       unpaid: 0,
       water: 0,
       received: 0,
@@ -289,8 +291,12 @@ export default {
     homeData () {
       this.loading = true
       this.$get('/cos/houses-info/home', { type: this.user.roleId === '75' ? this.user.userId : null }).then((r) => {
-        if (this.user.roleId === '75') {
+       console.log(r);
+       if (this.user.roleId === '75') {
           this.housesNum = r.data.housesNum
+          this.buildingNum = r.data.buildingNum
+          this.buildingNum_Type2 = r.data.typeNum1
+          this.series3 = [this.buildingNum-this.buildingNum_Type2,this.buildingNum_Type2]
           this.electricity = r.data.electricity
           this.unpaid = r.data.unpaid
           if (Number(this.unpaid) !== 0) {
@@ -324,8 +330,12 @@ export default {
             housesTypeRateLabel.push(item.nature)
             housesTypeRateData.push(item.num)
           })
-          this.series3 = housesTypeRateData
-          this.chartOptions3.labels = housesTypeRateLabel
+         /*  this.series3 = housesTypeRateData */
+          this.buildingNum = r.data.buildingNum
+          this.buildingNum_Type2 = r.data.typeNum1
+          this.series3 = [2,this.buildingNum-this.buildingNum_Type2,this.buildingNum_Type2]
+        /*   this.chartOptions3.labels = housesTypeRateLabel */
+          this.chartOptions3.labels = ['平房','楼梯房','电梯房']
           this.housesTypeRate = r.data.housesTypeRate
           this.bulletinList = r.data.bulletinInfo
           this.advance = r.data.advance

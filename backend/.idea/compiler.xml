@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="febs_shiro_jwt" target="1.8" />
+      <module name="febs_shiro_jwt" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

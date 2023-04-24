@@ -32,7 +32,7 @@
             </a-select>
           </a-form-item>
         </a-col>
-        <a-col :span="6">
+        <a-col :span="12">
           <a-form-item label='车位面积' v-bind="formItemLayout">
             <a-input-number style="width: 100%" :min="1" v-decorator="[
             'area',

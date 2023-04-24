@@ -32,8 +32,8 @@
             </a-select>
           </a-form-item>
         </a-col>
-        <a-col :span="6">
-          <a-form-item label='车位面积' v-bind="formItemLayout">
+        <a-col :span="12">
+          <a-form-item label='车位面积(m²)' v-bind="formItemLayout">
             <a-input-number style="width: 100%" :min="1" v-decorator="[
             'area',
             { rules: [{ required: true, message: '请输入车位总面积!' }] }
@@ -100,7 +100,7 @@ export default {
   },
   created() {
     this.form.getFieldDecorator('status', {
-            initialValue: '0'})
+            initialValue: '1'})
   },
   methods: {
     handleCancel () {

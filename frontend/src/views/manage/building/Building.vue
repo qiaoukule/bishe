@@ -1,6 +1,6 @@
 <template>
   <a-card :bordered="false" class="card-area">
-    <div :class="advanced ? 'search' : null">
+     <div :class="advanced ? 'search' : null">
       <!-- 搜索区域 -->
       <a-form layout="horizontal">
         <a-row :gutter="15">
@@ -9,7 +9,8 @@
               <a-form-item
                 label="楼宇名称"
                 :labelCol="{span: 5}"
-                :wrapperCol="{span: 17, offset: 2}">
+                :wrapperCol="{span: 17, offset: 2}"
+             >
                 <a-input v-model="queryParams.name"/>
               </a-form-item>
             </a-col>
@@ -63,7 +64,7 @@
           </span>
         </a-row>
       </a-form>
-    </div>
+     </div> 
     <div>
       <div class="operator">
         <a-button type="primary" ghost @click="add">新增</a-button>
@@ -290,6 +291,7 @@ export default {
       this.search()
     },
     edit (record) {
+      console.log(this.$refs.buildingEdit);
       this.$refs.buildingEdit.setFormValues(record)
       this.buildingEdit.visiable = true
     },

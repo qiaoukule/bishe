@@ -35,4 +35,10 @@
         </if>
         ORDER BY bi.create_date DESC
     </select>
+
+<!--获取楼梯房的总数-->
+    <select id="getType2Total" resultType="integer">
+        select count(*) from  building_info where type = 2
+    </select>
+
 </mapper>

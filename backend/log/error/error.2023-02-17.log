@@ -1981,3 +1981,5 @@ java.lang.NullPointerException: null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2023-02-17 23:06:14.242 febs [http-nio-9527-exec-7] ERROR c.m.f.c.authentication.JWTFilter - token已经过期
+2023-02-17 23:06:14.246 febs [http-nio-9527-exec-7] ERROR c.m.f.c.authentication.JWTFilter - token已经过期

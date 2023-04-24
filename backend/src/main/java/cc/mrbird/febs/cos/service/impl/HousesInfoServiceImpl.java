@@ -1,6 +1,7 @@
 package cc.mrbird.febs.cos.service.impl;
 
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.dao.BuildingInfoMapper;
 import cc.mrbird.febs.cos.dao.PaymentManageMapper;
 import cc.mrbird.febs.cos.entity.EpidemicRegister;
 import cc.mrbird.febs.cos.entity.HousesInfo;
@@ -19,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
- * @author FanK
+ * @author QQ
  */
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -38,6 +39,10 @@ public class HousesInfoServiceImpl extends ServiceImpl<HousesInfoMapper, HousesI
     private final IBulletinInfoService bulletinInfoService;
 
     private final IEpidemicRegisterService epidemicRegisterService;
+
+    private final IBuildingInfoService buildingInfoService;
+
+    private final BuildingInfoMapper buildingInfoMapper;
 
     @Override
     public IPage<LinkedHashMap<String, Object>> housesInfoByPage(Page page, HousesInfo housesInfo) {
@@ -71,6 +76,8 @@ public class HousesInfoServiceImpl extends ServiceImpl<HousesInfoMapper, HousesI
             result.put("bulletinInfo", bulletinInfoService.list());
             result.put("propertyItemYear", paymentManageMapper.propertyItemYear());
             result.put("housesTypeRate", housesInfoMapper.housesTypeRate());
+            result.put("buildingNum",buildingInfoService.count());
+            result.put("typeNum1",buildingInfoMapper.getType2Total());
             return result;
         } else {
             OwnerInfo ownerInfo = ownerInfoService.getOne(Wrappers.<OwnerInfo>lambdaQuery().eq(OwnerInfo::getUserId, type));

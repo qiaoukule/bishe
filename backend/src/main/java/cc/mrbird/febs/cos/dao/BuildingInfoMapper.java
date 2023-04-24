@@ -15,4 +15,6 @@ public interface BuildingInfoMapper extends BaseMapper<BuildingInfo> {
 
     // 分页获取楼宇信息
     IPage<LinkedHashMap<String, Object>> buildingInfoByPage(Page page, @Param("buildingInfo") BuildingInfo buildingInfo);
+
+    Integer getType2Total();
 }
