@@ -47,7 +47,8 @@ export default {
     flex-direction: column;
     height: 100vh;
     overflow: auto;
-    background: #f0f2f5 url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center ;
+   // background: #f0f2f5 url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center ;
+      background: #f0f2f5 url('https://s1.ax1x.com/2023/04/30/p937HMt.jpg') no-repeat center ;
     background-size: cover;
     .content {
       padding: 32px 0;

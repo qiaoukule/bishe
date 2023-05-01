@@ -249,7 +249,7 @@ export default {
     },
     handleParkEditSuccess () {
       this.parkEdit.visiable = false
-      this.$message.success('修改楼宇成功')
+      this.$message.success('修改车位信息成功')
       this.search()
     },
     handleDeptChange (value) {

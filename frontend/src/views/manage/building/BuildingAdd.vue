@@ -35,11 +35,17 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='所属社区' v-bind="formItemLayout">
-            <a-input v-decorator="[
+          <a-form-item label='所属苑区' v-bind="formItemLayout">
+            <a-select v-decorator="[
             'community',
-            { rules: [{ required: true, message: '请输入所属社区!' }] }
-            ]"/>
+            { rules: [{ required: true, message: '请输入层数!' }] }
+            ]">
+                  <a-select-option value="金河苑">金河苑</a-select-option>
+                  <a-select-option value="金沙苑">金沙苑</a-select-option>
+                  <a-select-option value="金景苑">金景苑</a-select-option>
+                  <a-select-option value="金浩苑">金浩苑</a-select-option>
+                  <a-select-option value="金湾苑">金湾苑</a-select-option>
+            </a-select>
           </a-form-item>
         </a-col>
         <a-col :span="6">
@@ -86,12 +92,11 @@
           <a-form-item label='类型' v-bind="formItemLayout">
             <a-select v-decorator="[
             'type',
-            { rules: [{ required: true, message: '请输入层数!' }] }
+            { rules: [{ required: true, message: '是什么类型的楼宇呀？' }] }
             ]">
-              <a-select-option value="1">平房</a-select-option>
-              <a-select-option value="2">多层楼</a-select-option>
-              <a-select-option value="3">高层楼</a-select-option>
-              <a-select-option value="4">简易楼</a-select-option>
+              <a-select-option value="1">平  房</a-select-option>
+              <a-select-option value="2">楼梯楼</a-select-option>
+              <a-select-option value="3">电梯楼</a-select-option>
             </a-select>
           </a-form-item>
         </a-col>

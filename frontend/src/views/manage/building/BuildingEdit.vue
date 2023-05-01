@@ -27,7 +27,7 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='所属街道' v-bind="formItemLayout">
+          <a-form-item label='所属苑区' v-bind="formItemLayout">
              <a-select v-decorator="[
             'community',
             { rules: [{ required: true, message: '请输入层数!' }] }
@@ -102,8 +102,9 @@
             'type',
             { rules: [{ required: true, message: '请输入类型!' }] }
             ]">
-              <a-select-option value="1">电梯房</a-select-option>
-              <a-select-option value="2">楼梯房</a-select-option>
+              <a-select-option value="1">平  房</a-select-option>
+              <a-select-option value="2">楼梯楼</a-select-option>
+              <a-select-option value="3">电梯楼</a-select-option>
             </a-select>
           </a-form-item>
         </a-col>
@@ -202,7 +203,6 @@ export default {
       }
     },
     setFormValues ({...building}) {
-      console.log("??");
       this.rowId = building.id
       let fields = ['name', 'address', 'street', 'community', 'usageArea', 'surfaceArea', 'type', 'rooms', 'units', 'layers']
       let obj = {}
@@ -234,11 +234,18 @@ export default {
       // 获取图片List
       let images = []
       this.fileList.forEach(image => {
+        console.log(image);
+      //  images.push(image.name)
+     if(images.response !== undefined) {
+         images.push(image.response)
+      } else {
         images.push(image.name)
+      } 
       })
       this.form.validateFields((err, values) => {
         values.id = this.rowId
         values.images = images.length > 0 ? images.join(',') : null
+        console.log(values.images);
         if (!err) {
           this.loading = true
           this.$put('/cos/building-info', {

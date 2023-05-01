@@ -287,7 +287,7 @@ export default {
     },
     handleRepairAddSuccess() {
       this.repairAdd.visiable = false;
-      this.$message.success("新增成功");
+      this.$message.success("申请成功~请耐心等待维修人员与您联系！");
       this.search();
     },
     edit(record) {

@@ -50,10 +50,10 @@
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 17, offset: 2}">
                 <a-select v-model="queryParams.type" allowClear>
-                  <a-select-option value="1">电梯房</a-select-option>
+                  <a-select-option value="1">平房</a-select-option>
                   <a-select-option value="2">楼梯楼</a-select-option>
-           <!--        <a-select-option value="3">高层楼</a-select-option>
-                  <a-select-option value="4">简易楼</a-select-option> -->
+                  <a-select-option value="3">电梯楼</a-select-option>
+               <!--      <a-select-option value="4">简易楼</a-select-option> -->
                 </a-select>
               </a-form-item>
             </a-col>
@@ -182,10 +182,10 @@ export default {
         title: '楼宇地址',
         dataIndex: 'address',
         scopedSlots: { customRender: 'addressShow' }
-      }, {
+      }, /*{
         title: '所属街道',
         dataIndex: 'street'
-      }, /*  {
+      },   {
         title: '所属社区',
         dataIndex: 'community'
       }, */ {
@@ -214,11 +214,11 @@ export default {
         customRender: (text, row, index) => {
           switch (text) {
             case 1:
-              return <a-tag>电梯房</a-tag>
+              return <a-tag>平房</a-tag>
             case 2:
               return <a-tag>楼梯楼</a-tag>
             case 3:
-              return <a-tag>高层楼</a-tag>
+              return <a-tag>电梯楼</a-tag>
             case 4:
               return <a-tag>简易房</a-tag>
             default:

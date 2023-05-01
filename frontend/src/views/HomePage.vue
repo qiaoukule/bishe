@@ -265,11 +265,11 @@ export default {
     openNotification (unpaid) {
       const key = `open${Date.now()}`
       this.$notification.open({
-        message: '缴费通知',
+        message: '尊敬的业主：',
         placement: 'bottomRight',
         description:
-          `您共欠金额${unpaid}元，请尽快缴费`,
-        btn: h => {
+          `❀欢迎登录❀`,
+      /*   btn: h => {
           return h(
             'a-button',
             {
@@ -283,7 +283,7 @@ export default {
             },
             '立即支付'
           )
-        },
+        }, */
         key,
         onClose: close
       })
@@ -333,7 +333,7 @@ export default {
          /*  this.series3 = housesTypeRateData */
           this.buildingNum = r.data.buildingNum
           this.buildingNum_Type2 = r.data.typeNum1
-          this.series3 = [2,this.buildingNum-this.buildingNum_Type2,this.buildingNum_Type2]
+          this.series3 = [2,this.buildingNum_Type2,this.buildingNum-this.buildingNum_Type2-2]
         /*   this.chartOptions3.labels = housesTypeRateLabel */
           this.chartOptions3.labels = ['平房','楼梯房','电梯房']
           this.housesTypeRate = r.data.housesTypeRate

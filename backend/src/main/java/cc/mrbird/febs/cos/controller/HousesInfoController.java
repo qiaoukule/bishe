@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author FanK
+ * @author QQ
  */
 @RestController
 @RequestMapping("/cos/houses-info")

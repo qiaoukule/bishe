@@ -25,7 +25,7 @@
       </a-row>
       <br/>
       <a-row style="padding-left: 24px;padding-right: 24px;">
-        <a-col :span="8"><b>所属社区：</b>
+        <a-col :span="8"><b>所属苑区：</b>
           {{ buildingData.community }}
         </a-col>
         <a-col :span="8"><b>总使用面积：</b>
@@ -39,9 +39,8 @@
       <a-row style="padding-left: 24px;padding-right: 24px;">
         <a-col :span="8"><b>房屋性质：</b>
           <span v-if="buildingData.type == 1">平房</span>
-          <span v-if="buildingData.type == 2">多层楼</span>
-          <span v-if="buildingData.type == 3">高层楼</span>
-          <span v-if="buildingData.type == 4">简易楼</span>
+          <span v-if="buildingData.type == 2">楼梯楼</span>
+          <span v-if="buildingData.type == 3">电梯楼</span>
         </a-col>
         <a-col :span="8"><b>间数：</b>
           {{ buildingData.rooms }} 间

@@ -66,7 +66,7 @@
               'nature',
               { rules: [{ required: true, message: '请输入房间性质!' }] }
               ]">
-              <a-select-option value="1">住宅楼房</a-select-option>
+              <a-select-option value="1" >住宅楼房</a-select-option>
               <a-select-option value="2">社区用处</a-select-option>
             </a-select>
           </a-form-item>
@@ -141,6 +141,7 @@ export default {
       form: this.$form.createForm(this),
       loading: false,
       buildList: [],
+     
       workerList: [],
       ownerList: []
     }
@@ -178,6 +179,7 @@ export default {
         if (key === 'buildingId' && houses[key] !== null) {
           houses[key] = houses[key].toString()
         }
+
         if (key === 'staffId' && houses[key] !== null) {
           houses[key] = houses[key].toString()
         }

@@ -15,7 +15,7 @@
             :src="'http://127.0.0.1:9527/imagesWeb/' + item.images.split(',')[0]"
           />
           <template slot="actions" class="ant-card-actions">
-            <a-icon v-if="item.repairStatus === null" key="setting" type="setting" @click="add(item)"/>
+            <a-icon v-if="item.repairStatus === null" key="setting" type="tool" @click="add(item)"/>
             <a-icon v-if="item.repairStatus !== null" key="edit" type="edit" @click="edit(item)"/>
             <a-icon key="ellipsis" type="ellipsis" @click="view(item)"/>
           </template>
