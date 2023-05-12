@@ -62,7 +62,8 @@
               <apexchart v-if="!loading" type="area" height="300" :options="chartOptions1" :series="series1"></apexchart>
             </a-card>
           </a-col> -->
-          <a-col :span="24" v-if="user.roleId != 75">
+     <!--      <a-col :span="24" v-if="user.roleId != 75"> -->
+          <a-col :span="24">
             <a-row :gutter="8" class="count-info" style="margin-top: 8px;margin-left: 0px;margin-right: 0px">
               <a-col :span="24" class="visit-count-wrapper">
                 <a-row :gutter="8">
@@ -72,20 +73,14 @@
                       <apexchart v-if="!loading" type="donut" :options="chartOptions3" :series="series3" height="309"></apexchart>
                     </a-card>
                   </a-col>
-                  <a-col :span="12">
+                  <a-col :span="12" v-if="user.roleId != 75">
                     <a-card class="visit-count">
                       <a-skeleton active v-if="loading" />
                       <apexchart v-show="!loading" ref="count" type=bar height=300 :options="chartOptions" :series="series" />
                     </a-card>
                   </a-col>
-                </a-row>
-              </a-col>
-            </a-row>
-          </a-col>
-        </a-row>
-      </a-col>
-      <!-- <a-col :span="8" class="project-wrapper">
-        <a-card hoverable :loading="loading" title="公告信息">
+                   <a-col :span="12" class="project-wrapper" >
+        <a-card hoverable :loading="loading" title="公告信息" v-if="user.roleId == 75">
           <div>
             <a-list item-layout="vertical" :pagination="pagination" :data-source="bulletinList">
               <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
@@ -102,7 +97,14 @@
             </a-list>
           </div>
         </a-card>
-      </a-col> -->
+      </a-col>  
+                </a-row>
+              </a-col>
+            </a-row>
+          </a-col>
+        </a-row>
+      </a-col>
+      
     </a-row>
   </div>
 </template>
@@ -291,12 +293,9 @@ export default {
     homeData () {
       this.loading = true
       this.$get('/cos/houses-info/home', { type: this.user.roleId === '75' ? this.user.userId : null }).then((r) => {
-       console.log(r);
+      //this.$get('/cos/houses-info/home', { type: this.user.roleId === '75' ? this.user.userId : null }).then((r) => {
        if (this.user.roleId === '75') {
           this.housesNum = r.data.housesNum
-          this.buildingNum = r.data.buildingNum
-          this.buildingNum_Type2 = r.data.typeNum1
-          this.series3 = [this.buildingNum-this.buildingNum_Type2,this.buildingNum_Type2]
           this.electricity = r.data.electricity
           this.unpaid = r.data.unpaid
           if (Number(this.unpaid) !== 0) {
@@ -313,6 +312,16 @@ export default {
           this.series1[0].data = epidemicRateData
           this.series1[0].name = '体温'
           this.chartOptions1.xaxis.categories = epidemicRateLabel
+          /**
+           * 楼宇统计功能
+           */
+          this.buildingNum = r.data.buildingNum
+          this.buildingNum_Type2 = r.data.typeNum1
+          console.log(this.buildingNum);
+          console.log(this.buildingNum_Type2);
+          this.series3 = [2,this.buildingNum_Type2,this.buildingNum-this.buildingNum_Type2-2]
+        /*   this.chartOptions3.labels = housesTypeRateLabel */
+          this.chartOptions3.labels = ['平房','楼梯房','电梯房']
           setTimeout(() => {
             this.loading = false
           }, 500)

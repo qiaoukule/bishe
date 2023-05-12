@@ -89,6 +89,8 @@ public class HousesInfoServiceImpl extends ServiceImpl<HousesInfoMapper, HousesI
             result.put("water", payableRate != null && payableRate.get("water") != null ? payableRate.get("water").toString() : 0);
             result.put("bulletinInfo", bulletinInfoService.list());
             result.put("epidemicRate", paymentManageMapper.epidemicRate());
+            result.put("buildingNum",buildingInfoService.count());
+            result.put("typeNum1",buildingInfoMapper.getType2Total());
             return result;
         }
     }

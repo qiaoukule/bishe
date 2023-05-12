@@ -71,7 +71,7 @@ export default {
               username: name,
               password: password
             }).then((r) => {
-              let data = r.data.data
+              let data = r.data.data 
               this.saveLoginData(data)
               setTimeout(() => {
                 this.loading = false
